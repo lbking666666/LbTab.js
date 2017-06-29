@@ -1,0 +1,79 @@
+/***
+LbTab.css 2017.06.28 吕彬 Q:286504720
+***/
+.lbTab{
+    box-sizing: border-box;
+    font-family: '微软雅黑';
+    color: #454545;
+    overflow: hidden;
+    clear: both;
+    *{
+        box-sizing: border-box;
+    }
+    &.border{
+        border: 1px solid #ddd;
+    }
+    p{
+        margin: 0;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .lbTabList{
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        li, span, div, p{
+            height: 50px;
+            line-height: 50px;
+            font-weight: 700;
+            color: #333;
+            border-right: 1px solid #ddd;
+            cursor: pointer;
+            -webkit-box-flex:1 ;
+            -moz-box-flex: 1;
+            text-align: center;
+            box-flex: 1;
+            word-break: break-all;
+            &:last-child{
+                border: 0;
+            }
+            &.active, &.cur, &.hover{
+                color: #111;
+                background: #f0f0f0;
+            }
+        }
+        &.pleft{
+            width: 20%;
+            display: block;
+            float: left;
+            li, span, div, p{
+                border-bottom: 1px solid #ddd;
+                display: block;
+                clear: both;
+                width: 100%;
+                &:last-child{
+                    border-right: 1px solid #ddd;
+                    border-bottom: 0;
+                }
+            }
+            &+.lbTabContent{
+                float: right;
+                width: 80%;
+                clear: none;
+                border: 0;
+            }
+        }
+    }
+    .lbTabContent{
+        clear: both;
+        padding: 1%;
+        border-top: 1px solid #ddd;
+    }
+}

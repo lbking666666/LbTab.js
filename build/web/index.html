@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta content="吕彬 qq:286504720 电话：15145090813" name="author" /><!--作者信息-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--ie兼容-->
+    <meta content="width=device-width, initial-scale=1" name="viewport" /><!--手机端兼容-->
+    <link rel="stylesheet" type="text/css" href="css/lbTab.min.css">
+    <style type="text/css">
+        body{
+            margin: 0;
+            color: #666;
+        }
+        h1{
+            text-align: center;
+        }
+        ol{
+            margin: 0;
+        }
+        h4{
+            text-indent: 2em;
+            color: #222;
+        }
+        .lbTab{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LbTab切换插件</h1>
+    <ol>
+        <li>
+            <dl>
+                <dt><strong>html结构</strong></dt>
+                <dd>外层一个大容器(html标签)包裹两个内容器</dd>
+                <dd>两个内容器中的内容器个数必须相等</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><strong>用法:</strong>new LbTab(id, event, active);</dt>
+                <dd>传入外容器id</dd>
+                <dd>相应事件类型（可选，默认为click）</dd>
+                <dd>切换样式名称（可选，默认为active）</dd>
+            </dl>
+        </li>
+    </ol>
+    <h4>demo1 正常调用</h4>
+    <div class="lbTab" id="lbTab">
+        <ul class="lbTabList">
+            <li>选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+            <li>选项4</li>
+        </ul>
+        <div class="lbTabContent">
+            <div class="lbTabCon">
+                内容111
+            </div>
+            <div class="lbTabCon">
+               内容222
+            </div>
+            <div class="lbTabCon">
+                内容333
+            </div>
+            <div class="lbTabCon">
+                内容444
+            </div>
+        </div> 
+    </div>
+    <div class="lbTab border" id="lbTab2">
+        <div class="lbTabList pleft">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+        <ul class="lbTabContent">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul> 
+    </div>
+    <h4>demo2 嵌套调用</h4>
+    <div class="lbTab border" id="lbTab3">
+        <div class="lbTabList">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+        <ul class="lbTabContent">
+            <li>
+                <p>111</p>
+                <div class="lbTab border" id="lbTab4">
+                    <ul class="lbTabList pleft">
+                        <li>选项1</li>
+                        <li>选项2</li>
+                        <li>选项3</li>
+                    </ul>
+                    <div class="lbTabContent">
+                        <div class="lbTabCon">
+                            内容111
+                        </div>
+                        <div class="lbTabCon">
+                           内容222
+                        </div>
+                        <div class="lbTabCon">
+                            内容333
+                        </div>
+                    </div> 
+                </div>
+            </li>
+            <li>22</li>
+            <li>333</li>
+        </ul> 
+    </div>
+
+   
+    <script type="text/javascript" src="js/lbTab.min.js"></script>
+    <script type="text/javascript">
+        var tab = new LbTab('lbTab', 'mouseover', 'cur');//三个参数都传入
+        var tab2 = new LbTab('lbTab2');//只传一个参数
+        var tab3 = new LbTab('lbTab3', 'click', 'hover');
+        var tab4 = new LbTab('lbTab4', 'mouseover', 'active');
+    </script>
+</body>
+</html>

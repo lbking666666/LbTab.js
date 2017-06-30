@@ -8,4 +8,4 @@ new LbTab(id, event, active);
 传入外容器id；
 相应事件类型（可选，默认为click）；
 切换样式名称（可选，默认为active）；
-[http://xiaoyaoge.club/LbTab.js/build/web/index.html](在线演示地址)
+(http://xiaoyaoge.club/LbTab.js/build/web/index.html)[在线演示地址]
